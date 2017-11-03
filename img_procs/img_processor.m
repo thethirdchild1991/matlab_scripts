@@ -6,7 +6,7 @@ files = dir('video_frames/*.bmp');
 do_img_proc = 1;
 do_draw_profile = 1;
 do_pause = 0;
-drow_single_line = 0;
+drow_single_line = 1;
 
 files_num = length(files);
 profile = zeros(files_num,1600);
@@ -19,6 +19,7 @@ step = 1;
 if (do_img_proc == 1)
     for k = from : step : to;
         A = imread(['video_frames/' files(k).name]);
+
 
     %     imshow(A);
 
@@ -73,6 +74,7 @@ end
 if (do_draw_profile == 1)
     for k = from:step:to
         A = imread(['video_frames/' files(k).name]);
+        
         [h w] = size(A);
         subplot(2,1,1);
         plot(profile(k,1:w), '.');
@@ -89,12 +91,13 @@ end
 
 
 if (drow_single_line == 1)
-    col_from = 505
+    col_from = 485;
     col_step = 1;
-    col_to = 515;
+    col_to = 485;
     
     for k = from:step:to
         A = imread(['video_frames/' files(k).name]);
+        
         figure;
         imshow(A);
         figure;
@@ -131,7 +134,11 @@ if (drow_single_line == 1)
             der2 = [0; diff(der1)];
 %             plot(1:length(line),line/max(line), 1:length(result), result/max(result) );
 
-            plot(1:length(line), line, 1:length(der2), der2);
+%             plot(1:length(line), line, 1:length(der2), der2);
+            marker = zeros(1,length(line));
+            marker(floor(profile(k,j))) = line(floor(profile(k,j)));
+            
+            plot(1:length(line), line, 1:length(line), marker, 'x');
             title(j);
             if (do_pause == 1)
                 while waitforbuttonpress == 0

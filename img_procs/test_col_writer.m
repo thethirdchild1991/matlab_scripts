@@ -6,6 +6,7 @@ files = dir('video_frames/*.bmp');
 files_num = length(files);
 
 A = imread(['video_frames/' files(511).name]);
+
 [h w] = size(A);    
 col_num = 485;
 
