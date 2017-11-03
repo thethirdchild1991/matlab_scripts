@@ -10,5 +10,6 @@ while hasFrame(v)
 %     imshow(vidFrame);
     i = i+1;
 end
+
 'finish'
 
