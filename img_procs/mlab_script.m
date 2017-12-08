@@ -26,10 +26,10 @@ end
 % title('WHITE AREA TO OBJECT AREA');
 
 
-% figure;
-% plot(res(1,:),3* - res(3,:),'.');
-% grid on;
-% title('300-B-G-R');
+figure;
+plot(res(1,:),3 - res(3,:)./res(7,:) - res(4,:)./res(7,:) - res(5,:)./res(7,:),'.');
+grid on;
+title('300-B-G-R');
 
 
 figure;
