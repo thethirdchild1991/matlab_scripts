@@ -10,7 +10,7 @@ files_num = length(files);
 if do_single_plot == 1
     for i = 1:1
         close all;
-        img = imread( ['E:\work\ARDEONOVA\REPOS\camera-gs-polivektris\bin\x86\release\result\img_5143_green_76.jpg' ]);    
+img = imread( ['D:\work\REPOS\camera-gs-polivektris\bin\x86\release\result\VAL_more_240\SAT_less_10\img_528_UNDEF_31_2_252.jpg' ]);    
         hsv = rgb2hsv(img);
         imshow(img);    
 
@@ -63,7 +63,7 @@ if do_single_plot == 1
 
         figure;
         [X, Y ] = size(hsv(:,:,1));
-        mesh(hsv(:,:,1).*180);
+        mesh(hsv(:,:,2));
     end
 else
     res = zeros(2,files_num);
