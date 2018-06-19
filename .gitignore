@@ -4,3 +4,13 @@ img_procs/video_frames/
 *.bmp
 
 *.txt
+
+*.zip
+
+*.bin
+
+*.csv
+
+*.stl
+
+dump_viewer/abviewer/
